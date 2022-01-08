@@ -1,4 +1,4 @@
-<ng-container *ngIf="true">
+<ng-container *ngIf="products.length !=0">
  <div class="container">
   <div class="card-table">
     <div class="cart-product">
@@ -21,8 +21,13 @@
             <td>{{item.p_details}}</td>
             <td>{{item.p_cost}}</td>
             <td>{{item.p_availability}}</td>
-            <td>{{item.total}}</td>
+            <td>{{item.p_cost}}</td>
             <td><button (click)="removeItem(item)" class="btn btn-primary">Delete</button></td>
+          </tr>
+          <tr>
+            <td colspan="6"></td>
+            <td><Strong></Strong></td>
+
           </tr>
         </tbody>
       </table>
@@ -31,7 +36,7 @@
  </div>
 </ng-container>
 
-<ng-container *ngIf="false">
+<ng-container *ngIf="products.length ==0">
   <div class="container">
     <div class="card">
       <h5 class="card-tittle"></h5>
@@ -47,7 +52,7 @@
 
       <h4>Your Cart is Empty</h4>
       <h6>Add item to it now</h6>
-      <button class="btn btn-primary">Shop Now</button>
+      <button routerLink="/products" class="btn btn-primary">Shop Now</button>
     </div>
   </div>
 </ng-container>
