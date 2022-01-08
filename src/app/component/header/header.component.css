@@ -1,0 +1,19 @@
+.form-group{
+  display: flex;
+  font-family: sans-serif;
+
+
+}
+.form-control{
+  border: none;
+  width:500px;
+  margin-left: 70px;
+  border-radius:5px;
+
+}
+.form-group i{
+  margin-left: 25px;
+
+}
+
+
