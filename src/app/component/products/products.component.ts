@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 // import { ApiService } from 'src/app/service/api.service';
 import productList from './productList.json';
+import { CartService } from 'src/app/service/cart.service';
 
 interface itemList {
   id: Number;
@@ -10,23 +11,23 @@ interface itemList {
   p_details: String;
   p_category: String;
 }
-
 @Component({
   selector: 'app-products',
   templateUrl: './products.component.html',
   styleUrls: ['./products.component.css'],
 })
 export class ProductsComponent {
-
+  public productList:any;
   products : itemList[]=productList;
-  constructor() {
-    console.log(this.products);
+  constructor(private cartService : CartService) {}
+
+  //  ngOnInit(): void{
+  //    this.productList.forEach((a:any)=>{
+  //      Object.assign(a,{quatity:1,total:a.price})
+  //    });
+  //   }
+
+  addToCart(item :any){
+      this.cartService.addToCart(item);
   }
-  // public productList: any;
-  // constructor(private api: ApiService) {}
-  // ngOnInit(): void {
-  //   this.api.getProduct().subscribe((res) => {
-  //     this.productList = res;
-  //   });
-  // }
 }

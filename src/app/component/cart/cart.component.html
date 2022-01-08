@@ -1,4 +1,5 @@
 <ng-container *ngIf="true">
+ <div class="container">
   <div class="card-table">
     <div class="cart-product">
       <table class="table table-responsive">
@@ -14,19 +15,20 @@
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>1</td>
-            <td>Mango</td>
-            <td>Premium</td>
-            <td>40</td>
-            <td>1</td>
-            <td>1</td>
-            <td><button class="btn btn-primary">Delete</button></td>
+          <tr *ngFor="let item of products; let i=index">
+            <td>{{i+1}}</td>
+            <td>{{item.p_name}}</td>
+            <td>{{item.p_details}}</td>
+            <td>{{item.p_cost}}</td>
+            <td>{{item.p_availability}}</td>
+            <td>{{item.total}}</td>
+            <td><button (click)="removeItem(item)" class="btn btn-primary">Delete</button></td>
           </tr>
         </tbody>
       </table>
     </div>
   </div>
+ </div>
 </ng-container>
 
 <ng-container *ngIf="false">
